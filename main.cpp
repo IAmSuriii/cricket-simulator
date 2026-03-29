@@ -67,9 +67,7 @@ int main(int argc, char* argv[]) {
         int base_stay[NUM_BATSMEN] = {100,90,80,70,60,50,40,30,25,20,15};
 
         for (int i = 0; i < NUM_BATSMEN; i++) {
-            int variance = variance_dist(master_gen);
-            int stay     = max(5, base_stay[i] + variance);
-            batting_order.push_back({i, stay});
+            batting_order.push_back({i, base_stay[i]});
         }
 
         if (sjf_mode) {
